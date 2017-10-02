@@ -1,0 +1,10 @@
+{% for client in data %}
+    <h1>{{ client }}</h1>
+    <p>(Updated {{ data[client]['datetime'] }})</p>
+    {% for host in data[client]['output'] %}
+        <h2> {{ host }} </h2>
+        {% for ip in data[client]['output'][host] %}
+            <p>{{ ip }}</p>
+        {% endfor %}
+    {% endfor %}
+{% endfor %}
